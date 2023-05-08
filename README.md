@@ -19,10 +19,10 @@ Requirements:
 
 How to Run the Pipeline:
 
-> Run make infra to create the necessary AWS services. You will be prompted to enter a password for your Redshift and RDS clusters.
-> Run make config to generate a configuration file with Terraform outputs and your AWS credentials.
-> Run make base-build to build the base Airflow image with project requirements.
-> Run make build to build Docker images for Airflow.
-> Run make up to execute the pipeline.
+1. Run make infra to create the necessary AWS services. You will be prompted to enter a password for your Redshift and RDS clusters.
+2. Run make config to generate a configuration file with Terraform outputs and your AWS credentials.
+3. Run make base-build to build the base Airflow image with project requirements.
+4. Run make build to build Docker images for Airflow.
+5. Run make up to execute the pipeline.
 
 This project showcases a comprehensive data engineering solution that integrates web scraping, data validation, storage, processing, and visualization. By utilizing Terraform, Docker, Airflow, and Metabase, this pipeline can be easily deployed, scaled, and maintained, providing a robust foundation for audio equipment analysis and future data-driven projects.
