@@ -10,3 +10,19 @@ Key Components:
 4. AWS Redshift and RDS Integration: The silver data is loaded into both AWS Redshift and RDS instances. Redshift is used for data warehousing and analytical processing, while RDS is available for use in future projects.
 5. Data Transformation and Testing: The data is further transformed and tested using dbt, ensuring data quality and consistency in the warehouse.
 6. Dashboard Creation: A Metabase dashboard is set up to visualize the processed data, providing insights into the audio equipment trends and performance.
+
+Requirements:
+
+> AWS CLI configuration with your AWS account.
+> Terraform installed for provisioning AWS services.
+> Docker and Docker-Compose installed for running Airflow and the pipeline.
+
+How to Run the Pipeline:
+
+> Run make infra to create the necessary AWS services. You will be prompted to enter a password for your Redshift and RDS clusters.
+> Run make config to generate a configuration file with Terraform outputs and your AWS credentials.
+> Run make base-build to build the base Airflow image with project requirements.
+> Run make build to build Docker images for Airflow.
+> Run make up to execute the pipeline.
+
+This project showcases a comprehensive data engineering solution that integrates web scraping, data validation, storage, processing, and visualization. By utilizing Terraform, Docker, Airflow, and Metabase, this pipeline can be easily deployed, scaled, and maintained, providing a robust foundation for audio equipment analysis and future data-driven projects.
