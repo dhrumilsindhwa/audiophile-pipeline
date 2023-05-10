@@ -8,15 +8,7 @@ from airflow.tasks.scraper_extract.models import InEarMonitor, Headphone
 
 
 def read_csv_as_dicts(filename: str) -> List[dict]:
-    """
-    Returns a list of dictionaries read from specified csv
 
-    Args:
-        filename (str): name of file to be read
-
-    Returns:
-        List[dict]
-    """
     try:
         with open(filename, "r", encoding="utf-8") as file:
             reader = DictReader(file)
@@ -27,15 +19,7 @@ def read_csv_as_dicts(filename: str) -> List[dict]:
 
 
 def sanitize_data(data: List[dict]) -> List[dict]:
-    """
-    Performs rudimentary sanitizations on bronze data
 
-    Args:
-        data (List[dict]): list of IEMs/Headphones
-
-    Returns:
-        List[dict]: Sanitized data
-    """
     df = pd.DataFrame(data)
 
     columns_to_drop = [

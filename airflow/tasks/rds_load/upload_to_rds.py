@@ -24,18 +24,8 @@ def create_conn():
 
 
 def prepare_query(query_filename: str) -> str:
-    """
-    Helper method to concatenate entire query and help with preparing parameters
-
-    Args:
-        query_filename (str): name of the sql file containing query
-
-    Returns:
-        str: completely concatenated query
-    """
     query_cursor = open(f"{script_path}/queries/{query_filename}.sql", "r")
     query = query_cursor.read()
-
     return query
 
 
