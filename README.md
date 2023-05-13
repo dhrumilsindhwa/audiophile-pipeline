@@ -2,6 +2,11 @@
 
 This project demonstrates an end-to-end data pipeline for audio equipment analysis, leveraging modern technologies and best practices in data engineering. The pipeline scrapes audio equipment data from Crinacle's website, processes and validates it, stores it in AWS cloud storage, and makes it available for further analysis and visualization through a Metabase dashboard. The project employs Terraform for infrastructure provisioning, Docker for containerization, and Apache Airflow for orchestration.
 
+## Architecture
+
+![Architecture Diagram](images/audiophile-flowchart.jpg)
+
+
 Key Components:
 
 1. Data Collection: The pipeline starts with a web scraping task that collects audio equipment data from Crinacle's website, generating the initial "bronze" dataset.
