@@ -2,17 +2,10 @@ from pydantic import BaseModel, Field, validator
 
 
 def grade_atmost_2_chars(rank: str) -> bool:
-    """
-    Reusable method to validate fields based on the letter grade convention
-    """
     return len(rank) > 2
 
 
 class InEarMonitor(BaseModel):
-    """
-    Pydantic model containing validators for the schema of InEarMonitors.
-    """
-
     rank: str
     model: str
     signature: str
@@ -31,20 +24,10 @@ class InEarMonitor(BaseModel):
 
     @validator("signature")
     def ensure_signature_has_no_quotes(cls, signature: str):
-        """
-        Ensure that any signatures after sanitzation do not have quotes
-        """
         if '"' in signature:
             raise ValueError("Signature must not contain quotes")
         return signature.title()
 
 
 class Headphone(InEarMonitor):
-    """
-    Pydantic model containing validators for Headphones.
-
-    Args:
-        InEarMonitor (InEarMonitor): subclasses the InEarMonitor class, including all validators
-    """
-
     fit_cup: str

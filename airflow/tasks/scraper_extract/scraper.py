@@ -21,15 +21,7 @@ class Scraper:
         self.base_url = "https://crinacle.com/rankings/"
 
     def clean_headers(self, headers: list) -> list:
-        """
-        Formats the table headers in snake case, code friendly format
 
-        Args:
-            headers (list): Contains the unformatted dirty table headers
-
-        Returns:
-            list: Returns properly formatted table headers
-        """
         clean_headers = []
 
         for header in headers:
@@ -49,12 +41,7 @@ class Scraper:
         return clean_headers
 
     def scrape(self, device_type: str) -> list:
-        """
-        Scrapes Crinacle's databases containing technical information about Headphones and IEMs.
 
-        Args:
-            device_type (str): specifies the device type and url to be scraped.
-        """
         url = self.base_url + device_type
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"}
         try:
@@ -91,14 +78,7 @@ class Scraper:
         return device_data
 
     def convert_to_csv(self, device_data: list, device_type: str, data_level: str) -> None:
-        """
-        Converts a list of dictionaries to a csv file
 
-        Args:
-            device_data (list[dict]): List of dictionaries containing each device
-            device_type (str): String specifiying the type of device: headphones or iems
-            data_level (str): Signifies the level of data, ie, gold, bronze, silver
-        """
         with open(f"./{device_type}-{data_level}.csv", "w", encoding="utf-8") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=device_data[0].keys())
             writer.writeheader()

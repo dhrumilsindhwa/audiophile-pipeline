@@ -47,7 +47,6 @@ def sanitize_data(data: List[dict]) -> List[dict]:
             row["price"] = -1
 
         # Some prices have models embedded to them, this replaces with only price
-        # Ex: 3000(HE1000) gives 3000
         if re.search("[a-zA-Z]", str(row["price"])):
             row["price"] = list(filter(None, re.split(r"(\d+)", str(row["price"]))))[0]
 
@@ -73,7 +72,6 @@ if __name__ == "__main__":
     headphones_list_sanitized = sanitize_data(headphones_list)
 
     # Validates all headphones/iems in a list based on the validators
-    # defined in the respective PyDantic models
     try:
         iems_list = [InEarMonitor.parse_obj(iem) for iem in iems_list_sanitized]
     except ValidationError as exception:
