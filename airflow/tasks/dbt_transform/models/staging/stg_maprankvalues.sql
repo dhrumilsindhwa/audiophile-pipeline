@@ -1,6 +1,3 @@
--- Each query iterates over the possible rank values for each audio device model and
--- assigns a numerical value to each rank.
-
 {% set rank_grades = ["S+", "S", "S-", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E+", "E", "E-", "F+", "F", "F-"] %}
 {% set ns = namespace(value=10) %}
 
