@@ -16,18 +16,28 @@ Key Components:
 5. Data Transformation and Testing: The data is further transformed and tested using dbt, ensuring data quality and consistency in the warehouse.
 6. Dashboard Creation: A Metabase dashboard is set up to visualize the processed data, providing insights into the audio equipment trends and performance.
 
-#Dashboards
+## Dashboards
 ![Architecture Diagram](images/average_iem_ratings.png)
 
 ![Architecture Diagram](images/avg_headphones_rating.png)
 
-#Requirements:
+![Architecture Diagram](images/headphoes-highest_rank_by_company.png)
+
+![Architecture Diagram](images/IEM-highest_rank_by_company.png)
+
+![Architecture Diagram](images/bang_2_buck_ratings.png)
+
+![Architecture Diagram](images/total_count.png)
+
+![Architecture Diagram](images/total_count_by_grade.png)
+
+## Requirements:
 
 > AWS CLI configuration with your AWS account.
 > Terraform installed for provisioning AWS services.
 > Docker and Docker-Compose installed for running Airflow and the pipeline.
 
-How to Run the Pipeline:
+## How to Run the Pipeline:
 
 1. Run make infra to create the necessary AWS services. You will be prompted to enter a password for your Redshift and RDS clusters.
 2. Run make config to generate a configuration file with Terraform outputs and your AWS credentials.
