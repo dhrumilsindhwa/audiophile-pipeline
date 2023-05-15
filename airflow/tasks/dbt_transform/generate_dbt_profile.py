@@ -2,7 +2,6 @@ import yaml
 import pathlib
 from dotenv import dotenv_values
 
-# Load config
 configuration_path = pathlib.Path(__file__).parent.parent.resolve()
 script_path = pathlib.Path(__file__).parent.resolve()
 config = dotenv_values(f"{configuration_path}/configuration.env")

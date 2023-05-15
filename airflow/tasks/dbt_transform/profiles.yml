@@ -5,8 +5,8 @@ dbt_transform:
       type: redshift
       host: tf-redshift-cluster.ciqxcmnal1jn.us-east-1.redshift.amazonaws.com:5439/crinacle_audiophile_ratings
       port: 5439
-      user: admin
-      password: Dhrumil1998@
+      user: 
+      password: 
       dbname: crinacle_audiophile_ratings
       schema: public
       sslmode: require
