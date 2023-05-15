@@ -16,7 +16,12 @@ Key Components:
 5. Data Transformation and Testing: The data is further transformed and tested using dbt, ensuring data quality and consistency in the warehouse.
 6. Dashboard Creation: A Metabase dashboard is set up to visualize the processed data, providing insights into the audio equipment trends and performance.
 
-Requirements:
+#Dashboards
+![Architecture Diagram](images/average_iem_ratings.png)
+
+![Architecture Diagram](images/avg_headphones_rating.png)
+
+#Requirements:
 
 > AWS CLI configuration with your AWS account.
 > Terraform installed for provisioning AWS services.
